@@ -2,523 +2,685 @@
 
 <html lang="en">
 <!--
-    LOGO SETUP INSTRUCTIONS:
-    1. Save your logo image as "hollerin-logo.png" in the same folder as this HTML file
-    2. The logo will automatically appear in the navigation bar and hero section
-    3. Alternatively, you can replace "hollerin-logo.png" in the code below with the full path to your logo
+LOGO SETUP INSTRUCTIONS:
+1. Save your logo image as "hvlogo.png" in the same folder as this HTML file
+2. The logo will automatically appear in the navigation bar and hero section
 -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hollerin' Vintage - Americana • Denim • Workwear</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hollerin' Vintage - Americana • Denim • Workwear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
-```
-    body {
-        font-family: 'Georgia', serif;
-        background-color: #f5f1e8;
-        color: #2c2416;
-        line-height: 1.6;
-    }
+body {
+font-family: ‘Lora’, serif;
+background-color: #fdfbf7;
+color: #3a3a3a;
+line-height: 1.6;
+}
 
-    /* Header */
-    header {
-        background: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
-        padding: 1rem 0;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
+/* Header */
+header {
+background: linear-gradient(135deg, #A54E23 0%, #C8852B 50%, #265C73 100%);
+background-size: 200% 200%;
+animation: gradientShift 10s ease infinite;
+padding: 1rem 0;
+box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+position: sticky;
+top: 0;
+z-index: 100;
+}
 
-    nav {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+@keyframes gradientShift {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
 
-    .logo-img {
-        height: 60px;
-        width: auto;
-    }
+nav {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 2rem;
-    }
+.logo-img {
+height: 60px;
+width: auto;
+}
 
-    nav a {
-        color: #ffeaa7;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s;
-        font-size: 1.1rem;
-    }
+nav ul {
+list-style: none;
+display: flex;
+gap: 2.5rem;
+}
 
-    nav a:hover {
-        color: #fff;
-    }
+nav a {
+color: #fef8f0;
+text-decoration: none;
+font-weight: 500;
+transition: all 0.3s ease;
+font-size: 1rem;
+letter-spacing: 0.5px;
+}
 
-    /* Hero Section */
-    .hero {
-      height: 320px;                      /* adjust to your taste */
-      margin-bottom: 80px;                 /* adds space below the hero section*/
-      display: flex;
-      flex-direction: column;
-      align-items: center;              /* text sits below the logo */
-      justify-content: center;
-      text-align: center;
-      color: #c47a3f;
-      position: relative;        
-    }
+nav a:hover {
+color: #e8d5bf;
+transform: translateY(-1px);
+}
 
-    .hero-logo {
-        max-width: 400px; 
-        width: 80%;
-        height: auto;
-        margin-bottom: 1rem;
-    }
-        
-    .hero-content h1 {
-        font-size: 4rem;
-        font-weight: bold;
-        text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
-        margin-bottom: 1rem;
-        font-style: italic;
-        letter-spacing: 2px;
-    }
+/*
+BACKGROUND IMAGE SETUP:
 
-    .hero-content p {
-        font-size: 1.5rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        font-family: 'Courier New', monospace;
-        font-weight: bold;
-    }
+1. Save your landscape photo as “hero-landscape.jpg” in the same folder as this HTML file
+1. Recommended: High-quality desert/western landscape (Texas hills, Monument Valley, etc.)
+1. Optimal dimensions: 1920x600px or larger
+1. The image will be fixed (parallax effect) and covered with a light overlay
+1. To change the image, replace “hero-landscape.jpg” in the .hero background-image property below
+   */
 
-    /* About Section */
-    .about {
-        max-width: 1200px;
-        margin: 4rem auto;
-        padding: 0 2rem;
-        text-align: center;
-    }
+/* Hero Section */
+.hero {
+height: 400px;
+margin-bottom: 80px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+position: relative;
+background-image: url(‘hero-landscape.jpg’);
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-repeat: no-repeat;
+}
 
-    .about h2 {
-        font-size: 2.5rem;
-        color: #8b4513;
-        margin-bottom: 1.5rem;
-        font-style: italic;
-    }
+.hero::before {
+content: ‘’;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(180deg, rgba(253,251,247,0.3) 0%, rgba(253,251,247,0.6) 100%);
+z-index: 1;
+}
 
-    .about p {
-        font-size: 1.2rem;
-        max-width: 800px;
-        margin: 0 auto;
-        color: #5d4e37;
-        line-height: 1.8;
-    }
+.hero-logo {
+max-width: 420px;
+width: 80%;
+height: auto;
+margin-bottom: 1.5rem;
+filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
+position: relative;
+z-index: 2;
+}
 
-    /* Products Section */
-    .products {
-        max-width: 1200px;
-        margin: 4rem auto;
-        padding: 0 2rem;
-    }
+.hero-content {
+position: relative;
+z-index: 2;
+}
 
-    .products h2 {
-        font-size: 2.5rem;
-        color: #8b4513;
-        margin-bottom: 2rem;
-        text-align: center;
-        font-style: italic;
-    }
+.hero-content h1 {
+font-size: 4rem;
+font-weight: bold;
+margin-bottom: 1rem;
+font-style: italic;
+letter-spacing: 2px;
+}
 
-    .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 2rem;
-    }
+.hero-content p {
+font-size: 1.3rem;
+letter-spacing: 6px;
+text-transform: uppercase;
+font-family: ‘Playfair Display’, serif;
+font-weight: 600;
+font-style: italic;
+color: #A54E23;
+padding: 0.5rem;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
 
-    .product-card {
-        background: white;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        transition: transform 0.3s, box-shadow 0.3s;
-        border: 3px solid #d2691e;
-    }
+@keyframes gradientFlow {
+0% { background-position: 0% center; }
+50% { background-position: 100% center; }
+100% { background-position: 0% center; }
+}
 
-    .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.25);
-    }
+/* About Section */
+.about {
+max-width: 1200px;
+margin: 4rem auto;
+padding: 0 2rem;
+text-align: center;
+}
 
-    .product-image {
-        width: 100%;
-        height: 300px;
-        background: linear-gradient(135deg, #c47f5a 0%, #8b6f47 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffeaa7;
-        font-size: 3rem;
-        font-weight: bold;
-        position: relative;
-        overflow: hidden;
-    }
+.about h2 {
+font-size: 2.8rem;
+color: #A54E23;
+margin-bottom: 1.5rem;
+font-family: ‘Playfair Display’, serif;
+font-weight: 600;
+}
 
-    .product-image::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 10px,
-            rgba(255,255,255,0.05) 10px,
-            rgba(255,255,255,0.05) 20px
-        );
-    }
+.about p {
+font-size: 1.15rem;
+max-width: 800px;
+margin: 0 auto;
+color: #5a5a5a;
+line-height: 1.9;
+}
 
-    .product-info {
-        padding: 1.5rem;
-    }
+/* Products Section */
+.products {
+max-width: 1200px;
+margin: 4rem auto;
+padding: 0 2rem;
+}
 
-    .product-info h3 {
-        font-size: 1.4rem;
-        color: #8b4513;
-        margin-bottom: 0.5rem;
-    }
+.products h2 {
+font-size: 2.8rem;
+color: #A54E23;
+margin-bottom: 2.5rem;
+text-align: center;
+font-family: ‘Playfair Display’, serif;
+font-weight: 600;
+}
 
-    .product-info p {
-        color: #5d4e37;
-        margin-bottom: 1rem;
-        font-size: 0.95rem;
-    }
+.product-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 2rem;
+}
 
-    .product-price {
-        font-size: 1.3rem;
-        color: #d2691e;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
+.product-card {
+background: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+border: 2px solid #C8852B;
+opacity: 0;
+animation: fadeUp 0.6s ease forwards;
+}
 
-    .ebay-link {
-        display: inline-block;
-        background: #d2691e;
-        color: white;
-        padding: 0.8rem 1.5rem;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: background 0.3s;
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-    }
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+.product-card:nth-child(5) { animation-delay: 0.5s; }
+.product-card:nth-child(6) { animation-delay: 0.6s; }
+.product-card:nth-child(7) { animation-delay: 0.7s; }
+.product-card:nth-child(8) { animation-delay: 0.8s; }
 
-    .ebay-link:hover {
-        background: #8b4513;
-    }
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
 
-    /* Categories */
-    .categories {
-        max-width: 1200px;
-        margin: 4rem auto;
-        padding: 0 2rem;
-    }
+.product-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 12px 28px rgba(165, 78, 35, 0.25);
+}
 
-    .categories h2 {
-        font-size: 2.5rem;
-        color: #8b4513;
-        margin-bottom: 2rem;
-        text-align: center;
-        font-style: italic;
-    }
+.product-image {
+width: 100%;
+height: 300px;
+background: linear-gradient(135deg, #265C73 0%, #1e4a5a 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+color: #fef8f0;
+font-size: 3rem;
+font-weight: bold;
+position: relative;
+overflow: hidden;
+box-shadow: inset 0 2px 8px rgba(0,0,0,0.15);
+}
 
-    .category-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
+.product-image::before {
+content: ‘’;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: repeating-linear-gradient(
+45deg,
+transparent,
+transparent 10px,
+rgba(255,255,255,0.03) 10px,
+rgba(255,255,255,0.03) 20px
+);
+}
 
-    .category-card {
-        background: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
-        padding: 2rem;
-        border-radius: 8px;
-        text-align: center;
-        color: #ffeaa7;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        transition: transform 0.3s;
-        border: 3px solid #5d4e37;
-    }
+.product-info {
+padding: 1.5rem;
+}
 
-    .category-card:hover {
-        transform: scale(1.05);
-    }
+.product-info h3 {
+font-size: 1.4rem;
+color: #3a3a3a;
+margin-bottom: 0.5rem;
+font-weight: 600;
+}
 
-    .category-card h3 {
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-        font-style: italic;
-    }
+.product-info p {
+color: #6a6a6a;
+margin-bottom: 1rem;
+font-size: 0.95rem;
+line-height: 1.5;
+}
 
-    .category-card p {
-        font-size: 1rem;
-    }
+.product-price {
+font-size: 1.35rem;
+color: #A54E23;
+font-weight: 700;
+margin-bottom: 1rem;
+}
 
-    /* Footer */
-    footer {
-        background: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
-        color: #ffeaa7;
-        text-align: center;
-        padding: 3rem 2rem;
-        margin-top: 4rem;
-    }
+.ebay-link {
+display: inline-block;
+background: linear-gradient(135deg, #265C73 0%, #1e4a5a 100%);
+color: white;
+padding: 0.75rem 1.5rem;
+text-decoration: none;
+border-radius: 8px;
+font-weight: 600;
+transition: all 0.3s ease;
+text-transform: uppercase;
+font-size: 0.85rem;
+letter-spacing: 1px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
 
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+.ebay-link:hover {
+background: linear-gradient(135deg, #1e4a5a 0%, #163a48 100%);
+transform: translateY(-2px);
+box-shadow: 0 6px 16px rgba(38, 92, 115, 0.35);
+}
 
-    .footer-content h3 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        font-style: italic;
-    }
+/* Categories */
+.categories {
+max-width: 1200px;
+margin: 4rem auto;
+padding: 0 2rem;
+}
 
-    .footer-content p {
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-    }
+.categories h2 {
+font-size: 2.8rem;
+color: #A54E23;
+margin-bottom: 1rem;
+text-align: center;
+font-family: ‘Playfair Display’, serif;
+font-weight: 600;
+position: relative;
+display: inline-block;
+width: 100%;
+}
 
-    .social-links {
-        margin-top: 1.5rem;
-    }
+.categories h2::after {
+content: ‘’;
+display: block;
+width: 120px;
+height: 3px;
+background: linear-gradient(90deg, transparent, #C8852B, transparent);
+margin: 1rem auto 1.5rem;
+border-radius: 2px;
+}
 
-    .social-links a {
-        color: #ffeaa7;
-        text-decoration: none;
-        margin: 0 1rem;
-        font-size: 1.1rem;
-        font-weight: bold;
-        transition: color 0.3s;
-    }
+.category-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+}
 
-    .social-links a:hover {
-        color: white;
-    }
+.category-card {
+background: linear-gradient(135deg, #8fa899 0%, #6b9aaf 50%, #7b9aaa 100%);
+padding: 2.5rem;
+border-radius: 12px;
+text-align: center;
+color: #fef8f0;
+box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+transition: all 0.4s ease;
+border: 2px solid rgba(255,255,255,0.3);
+position: relative;
+overflow: hidden;
+opacity: 0;
+animation: fadeUp 0.6s ease forwards;
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-        .hero-content h1 {
-            font-size: 2.5rem;
-        }
+.category-card:nth-child(1) { animation-delay: 0.2s; }
+.category-card:nth-child(2) { animation-delay: 0.3s; }
+.category-card:nth-child(3) { animation-delay: 0.4s; }
+.category-card:nth-child(4) { animation-delay: 0.5s; }
 
-        .hero-content p {
-            font-size: 1rem;
-        }
+.category-card::before {
+content: ‘’;
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+opacity: 0;
+transition: opacity 0.5s ease;
+}
 
-        nav ul {
-            gap: 1rem;
-        }
+.category-card:hover {
+transform: translateY(-12px);
+box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+}
 
-        nav a {
-            font-size: 0.9rem;
-        }
+.category-card:hover::before {
+opacity: 1;
+}
 
-        .logo-text {
-            font-size: 1.4rem;
-        }
+.category-card:nth-child(1) {
+background: linear-gradient(135deg, #A54E23 0%, #8d3f1a 100%);
+box-shadow: 0 6px 20px rgba(165, 78, 35, 0.3);
+}
 
-        /* Desktop spacing for hero *?
-        @media (min-width: 768px) {
-        .hero {
-          margin-bottom: 100px;
-        }
-    }
+.category-card:nth-child(2) {
+background: linear-gradient(135deg, #265C73 0%, #1e4a5a 100%);
+box-shadow: 0 6px 20px rgba(38, 92, 115, 0.3);
+}
+
+.category-card:nth-child(3) {
+background: linear-gradient(135deg, #C8852B 0%, #a76f22 100%);
+box-shadow: 0 6px 20px rgba(200, 133, 43, 0.3);
+}
+
+.category-card:nth-child(4) {
+background: linear-gradient(135deg, #8d3f1a 0%, #6e3214 100%);
+box-shadow: 0 6px 20px rgba(141, 63, 26, 0.3);
+}
+
+.category-card:hover {
+transform: translateY(-5px) scale(1.02);
+box-shadow: 0 8px 24px rgba(90,124,143,0.2);
+}
+
+.category-card h3 {
+font-size: 1.8rem;
+margin-bottom: 0.5rem;
+font-family: ‘Playfair Display’, serif;
+font-weight: 600;
+}
+
+.category-card p {
+font-size: 1rem;
+opacity: 0.95;
+}
+
+/* Footer */
+footer {
+background: linear-gradient(135deg, #265C73 0%, #A54E23 50%, #C8852B 100%);
+background-size: 200% 200%;
+animation: gradientShift 10s ease infinite;
+color: #fef8f0;
+text-align: center;
+padding: 3.5rem 2rem;
+margin-top: 4rem;
+box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+}
+
+.footer-content {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.footer-content h3 {
+font-size: 2.2rem;
+margin-bottom: 1rem;
+font-family: ‘Playfair Display’, serif;
+font-weight: 600;
+}
+
+.footer-content p {
+margin-bottom: 1rem;
+font-size: 1.05rem;
+opacity: 0.95;
+}
+
+.social-links {
+margin-top: 2rem;
+}
+
+.social-links a {
+color: #fef8f0;
+text-decoration: none;
+margin: 0 1.5rem;
+font-size: 1.05rem;
+font-weight: 600;
+transition: all 0.3s ease;
+letter-spacing: 0.5px;
+}
+
+.social-links a:hover {
+color: #e8d5bf;
+transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.hero-content h1 {
+font-size: 2.5rem;
+}
+
+.hero-content p {
+font-size: 1rem;
+letter-spacing: 2px;
+}
+
+nav ul {
+gap: 1rem;
+}
+
+nav a {
+font-size: 0.9rem;
+}
+
+.logo-img {
+height: 50px;
+}
+}
+
+/* Desktop spacing for hero */
+@media (min-width: 768px) {
+.hero {
+margin-bottom: 100px;
+}
+}
 </style>
-```
 
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#home"><img src="hollerin-logo.png" alt="Hollerin' Vintage" class="logo-img"></a>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+<nav>
+<a href="#home"><img src="hvlogo.png" alt="Hollerin' Vintage" class="logo-img"></a>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#shop">Shop</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
 
-```
 <section class="hero" id="home">
-    <div class="hero-content">
-      <img src="hvlogo.png"
-           alt="Hollerin Vintage Logo"
-           class="hero-logo">
-        <p>Americana • Denim • Workwear</p>
-    </div>
+<div class="hero-content">
+<img src="hvlogo.png"
+alt="Hollerin Vintage Logo"
+class="hero-logo">
+<p>Americana • Denim • Workwear</p>
+</div>
 </section>
 
 <section class="categories">
-    <h2>Our Collections</h2>
-    <div class="category-grid">
-        <div class="category-card">
-            <h3>Americana</h3>
-            <p>Classic pieces from the heartland</p>
-        </div>
-        <div class="category-card">
-            <h3>Denim</h3>
-            <p>Vintage jeans, jackets & more</p>
-        </div>
-        <div class="category-card">
-            <h3>Workwear</h3>
-            <p>Rugged, timeless style</p>
-        </div>
-        <div class="category-card">
-            <h3>Curated</h3>
-            <p>Handpicked vintage gems</p>
-        </div>
-    </div>
+<h2>Our Collections</h2>
+<div class="category-grid">
+<div class="category-card">
+<h3>Americana</h3>
+<p>Classic pieces from the heartland</p>
+</div>
+<div class="category-card">
+<h3>Denim</h3>
+<p>Vintage jeans, jackets & more</p>
+</div>
+<div class="category-card">
+<h3>Workwear</h3>
+<p>Rugged, timeless style</p>
+</div>
+<div class="category-card">
+<h3>Curated</h3>
+<p>Handpicked vintage gems</p>
+</div>
+</div>
 </section>
 
 <section class="about" id="about">
-    <h2>About Hollerin' Vintage</h2>
-    <p>
-        Welcome to Hollerin' Vintage, where we celebrate the authentic spirit of Americana. 
-        Each piece in our collection is carefully curated, bringing you the finest vintage denim, 
-        workwear, and classic American style. From well-worn Levi's to timeless chore coats, 
-        every item tells a story of quality craftsmanship and enduring style. 
-        We're passionate about preserving the heritage of American fashion and bringing these 
-        treasures to those who appreciate real, lasting quality.
-    </p>
+<h2>About Hollerin' Vintage</h2>
+<p>
+Welcome to Hollerin' Vintage, where we celebrate the authentic spirit of Americana.
+Each piece in our collection is carefully curated, bringing you the finest vintage denim,
+workwear, and classic American style. From well-worn Levi's to timeless chore coats,
+every item tells a story of quality craftsmanship and enduring style.
+We're passionate about preserving the heritage of American fashion and bringing these
+treasures to those who appreciate real, lasting quality.
+</p>
 </section>
 
 <section class="products" id="shop">
-    <h2>Featured Items</h2>
-    <div class="product-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-            <div class="product-image">🔵</div>
-            <div class="product-info">
-                <h3>Vintage Levi's 501</h3>
-                <p>Classic denim, perfectly faded. Size 32x32. Made in USA.</p>
-                <div class="product-price">$85</div>
-                <a href="#" class="ebay-link">View on eBay</a>
-            </div>
-        </div>
+<h2>Featured Items</h2>
+<div class="product-grid">
+<!-- Product 1 -->
+<div class="product-card">
+<div class="product-image">👖</div>
+<div class="product-info">
+<h3>Vintage Levi's 501</h3>
+<p>Classic denim, perfectly faded. Size 32x32. Made in USA.</p>
+<div class="product-price">$85</div>
+<a href="#" class="ebay-link">View on eBay</a>
+</div>
+</div>
 
-        <!-- Product 2 -->
-        <div class="product-card">
-            <div class="product-image">👔</div>
-            <div class="product-info">
-                <h3>Carhartt Chore Coat</h3>
-                <p>Heavy-duty workwear jacket. Vintage brown duck canvas.</p>
-                <div class="product-price">$125</div>
-                <a href="#" class="ebay-link">View on eBay</a>
-            </div>
-        </div>
+<!-- Product 2 -->
 
-        <!-- Product 3 -->
-        <div class="product-card">
-            <div class="product-image">👕</div>
-            <div class="product-info">
-                <h3>Pendleton Flannel</h3>
-                <p>Wool flannel shirt in classic plaid. Size Large.</p>
-                <div class="product-price">$65</div>
-                <a href="#" class="ebay-link">View on eBay</a>
-            </div>
-        </div>
+<div class="product-card">
+<div class="product-image">🧥</div>
+<div class="product-info">
+<h3>Carhartt Chore Coat</h3>
+<p>Heavy-duty workwear jacket. Vintage brown duck canvas.</p>
+<div class="product-price">$125</div>
+<a href="#" class="ebay-link">View on eBay</a>
+</div>
+</div>
 
-        <!-- Product 4 -->
-        <div class="product-card">
-            <div class="product-image">🧢</div>
-            <div class="product-info">
-                <h3>Vintage Trucker Cap</h3>
-                <p>Mesh back snapback with authentic patina.</p>
-                <div class="product-price">$35</div>
-                <a href="#" class="ebay-link">View on eBay</a>
-            </div>
-        </div>
+<!-- Product 3 -->
 
-        <!-- Product 5 -->
-        <div class="product-card">
-            <div class="product-image">👖</div>
-            <div class="product-info">
-                <h3>Wrangler Western Jeans</h3>
-                <p>Vintage cut with authentic wear. Size 34x34.</p>
-                <div class="product-price">$70</div>
-                <a href="#" class="ebay-link">View on eBay</a>
-            </div>
-        </div>
+<div class="product-card">
+<div class="product-image">👔</div>
+<div class="product-info">
+<h3>Pendleton Flannel</h3>
+<p>Wool flannel shirt in classic plaid. Size Large.</p>
+<div class="product-price">$65</div>
+<a href="#" class="ebay-link">View on eBay</a>
+</div>
+</div>
 
-        <!-- Product 6 -->
-        <div class="product-card">
-            <div class="product-image">🥾</div>
-            <div class="product-info">
-                <h3>Red Wing Boots</h3>
-                <p>Classic work boots with tons of life left. Size 10.</p>
-                <div class="product-price">$150</div>
-                <a href="#" class="ebay-link">View on eBay</a>
-            </div>
-        </div>
+<!-- Product 4 -->
 
-        <!-- Product 7 -->
-        <div class="product-card">
-            <div class="product-image">🧥</div>
-            <div class="product-info">
-                <h3>Vintage Denim Jacket</h3>
-                <p>Lee Storm Rider jacket. Perfect fade. Size Medium.</p>
-                <div class="product-price">$95</div>
-                <a href="#" class="ebay-link">View on eBay</a>
-            </div>
-        </div>
+<div class="product-card">
+<div class="product-image">🧢</div>
+<div class="product-info">
+<h3>Vintage Trucker Cap</h3>
+<p>Mesh back snapback with authentic patina.</p>
+<div class="product-price">$35</div>
+<a href="#" class="ebay-link">View on eBay</a>
+</div>
+</div>
 
-        <!-- Product 8 -->
-        <div class="product-card">
-            <div class="product-image">👔</div>
-            <div class="product-info">
-                <h3>Dickies Work Pants</h3>
-                <p>Classic workwear pants in tan. Size 33x30.</p>
-                <div class="product-price">$45</div>
-                <a href="#" class="ebay-link">View on eBay</a>
-            </div>
-        </div>
-    </div>
+<!-- Product 5 -->
+
+<div class="product-card">
+<div class="product-image">👖</div>
+<div class="product-info">
+<h3>Wrangler Western Jeans</h3>
+<p>Vintage cut with authentic wear. Size 34x34.</p>
+<div class="product-price">$70</div>
+<a href="#" class="ebay-link">View on eBay</a>
+</div>
+</div>
+
+<!-- Product 6 -->
+
+<div class="product-card">
+<div class="product-image">👢</div>
+<div class="product-info">
+<h3>Red Wing Boots</h3>
+<p>Classic work boots with tons of life left. Size 10.</p>
+<div class="product-price">$150</div>
+<a href="#" class="ebay-link">View on eBay</a>
+</div>
+</div>
+
+<!-- Product 7 -->
+
+<div class="product-card">
+<div class="product-image">🧥</div>
+<div class="product-info">
+<h3>Vintage Denim Jacket</h3>
+<p>Lee Storm Rider jacket. Perfect fade. Size Medium.</p>
+<div class="product-price">$95</div>
+<a href="#" class="ebay-link">View on eBay</a>
+</div>
+</div>
+
+<!-- Product 8 -->
+
+<div class="product-card">
+<div class="product-image">👖</div>
+<div class="product-info">
+<h3>Dickies Work Pants</h3>
+<p>Classic workwear pants in tan. Size 33x30.</p>
+<div class="product-price">$45</div>
+<a href="#" class="ebay-link">View on eBay</a>
+</div>
+</div>
+</div>
 </section>
 
 <footer id="contact">
-    <div class="footer-content">
-        <h3>Hollerin' Vintage</h3>
-        <p>Curating authentic Americana, one piece at a time.</p>
-        <p>Questions? Email us at: <strong>info@hollerinvintage.com</strong></p>
-        <div class="social-links">
-            <a href="#">Instagram</a>
-            <a href="#">eBay Store</a>
-            <a href="#">Facebook</a>
-        </div>
-        <p style="margin-top: 2rem; font-size: 0.9rem;">© 2025 Hollerin' Vintage. All rights reserved.</p>
-    </div>
+<div class="footer-content">
+<h3>Hollerin' Vintage</h3>
+<p>Curating authentic Americana, one piece at a time.</p>
+<p>Questions? Email us at: <strong>info@hollerinvintage.com</strong></p>
+<div class="social-links">
+<a href="#">Instagram</a>
+<a href="#">eBay Store</a>
+<a href="#">Facebook</a>
+</div>
+<p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.85;">© 2025 Hollerin' Vintage. All rights reserved.</p>
+</div>
 </footer>
-```
 
 </body>
 </html>
