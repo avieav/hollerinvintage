@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--
+    LOGO SETUP INSTRUCTIONS:
+    1. Save your logo image as "hollerin-logo.png" in the same folder as this HTML file
+    2. The logo will automatically appear in the navigation bar and hero section
+    3. Alternatively, you can replace "hollerin-logo.png" in the code below with the full path to your logo
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollerin' Vintage - Americana • Denim • Workwear</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Georgia', serif;
+        background-color: #f5f1e8;
+        color: #2c2416;
+        line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+        background: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-img {
+        height: 60px;
+        width: auto;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav a {
+        color: #ffeaa7;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        font-size: 1.1rem;
+    }
+
+    nav a:hover {
+        color: #fff;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23c47f5a" width="1200" height="600"/><path fill="%238b4513" d="M0 400 L200 350 L400 380 L600 340 L800 370 L1000 350 L1200 380 L1200 600 L0 600 Z"/></svg>');
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #ffeaa7;
+        position: relative;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        margin-bottom: 1rem;
+        font-style: italic;
+        letter-spacing: 2px;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+    }
+
+    /* About Section */
+    .about {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+        text-align: center;
+    }
+
+    .about h2 {
+        font-size: 2.5rem;
+        color: #8b4513;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+    }
+
+    .about p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #5d4e37;
+        line-height: 1.8;
+    }
+
+    /* Products Section */
+    .products {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+    }
+
+    .products h2 {
+        font-size: 2.5rem;
+        color: #8b4513;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .product-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 3px solid #d2691e;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    }
+
+    .product-image {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, #c47f5a 0%, #8b6f47 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffeaa7;
+        font-size: 3rem;
+        font-weight: bold;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255,255,255,0.05) 10px,
+            rgba(255,255,255,0.05) 20px
+        );
+    }
+
+    .product-info {
+        padding: 1.5rem;
+    }
+
+    .product-info h3 {
+        font-size: 1.4rem;
+        color: #8b4513;
+        margin-bottom: 0.5rem;
+    }
+
+    .product-info p {
+        color: #5d4e37;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .product-price {
+        font-size: 1.3rem;
+        color: #d2691e;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .ebay-link {
+        display: inline-block;
+        background: #d2691e;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    .ebay-link:hover {
+        background: #8b4513;
+    }
+
+    /* Categories */
+    .categories {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+    }
+
+    .categories h2 {
+        font-size: 2.5rem;
+        color: #8b4513;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .category-card {
+        background: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        color: #ffeaa7;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        transition: transform 0.3s;
+        border: 3px solid #5d4e37;
+    }
+
+    .category-card:hover {
+        transform: scale(1.05);
+    }
+
+    .category-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        font-style: italic;
+    }
+
+    .category-card p {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        background: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
+        color: #ffeaa7;
+        text-align: center;
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-content h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .footer-content p {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .social-links {
+        margin-top: 1.5rem;
+    }
+
+    .social-links a {
+        color: #ffeaa7;
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+        color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+        }
+
+        nav ul {
+            gap: 1rem;
+        }
+
+        nav a {
+            font-size: 0.9rem;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home"><img src="hollerin-logo.png" alt="Hollerin' Vintage" class="logo-img"></a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+```
+<section class="hero" id="home">
+    <div class="hero-content">
+        <img src="hollerin-logo.png" alt="Hollerin' Vintage" style="max-width: 600px; width: 90%; height: auto; margin-bottom: 2rem;">
+        <p>Americana • Denim • Workwear</p>
+    </div>
+</section>
+
+<section class="categories">
+    <h2>Our Collections</h2>
+    <div class="category-grid">
+        <div class="category-card">
+            <h3>Americana</h3>
+            <p>Classic pieces from the heartland</p>
+        </div>
+        <div class="category-card">
+            <h3>Denim</h3>
+            <p>Vintage jeans, jackets & more</p>
+        </div>
+        <div class="category-card">
+            <h3>Workwear</h3>
+            <p>Rugged, timeless style</p>
+        </div>
+        <div class="category-card">
+            <h3>Curated</h3>
+            <p>Handpicked vintage gems</p>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>About Hollerin' Vintage</h2>
+    <p>
+        Welcome to Hollerin' Vintage, where we celebrate the authentic spirit of Americana. 
+        Each piece in our collection is carefully curated, bringing you the finest vintage denim, 
+        workwear, and classic American style. From well-worn Levi's to timeless chore coats, 
+        every item tells a story of quality craftsmanship and enduring style. 
+        We're passionate about preserving the heritage of American fashion and bringing these 
+        treasures to those who appreciate real, lasting quality.
+    </p>
+</section>
+
+<section class="products" id="shop">
+    <h2>Featured Items</h2>
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="product-image">🔵</div>
+            <div class="product-info">
+                <h3>Vintage Levi's 501</h3>
+                <p>Classic denim, perfectly faded. Size 32x32. Made in USA.</p>
+                <div class="product-price">$85</div>
+                <a href="#" class="ebay-link">View on eBay</a>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <div class="product-image">👔</div>
+            <div class="product-info">
+                <h3>Carhartt Chore Coat</h3>
+                <p>Heavy-duty workwear jacket. Vintage brown duck canvas.</p>
+                <div class="product-price">$125</div>
+                <a href="#" class="ebay-link">View on eBay</a>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="product-image">👕</div>
+            <div class="product-info">
+                <h3>Pendleton Flannel</h3>
+                <p>Wool flannel shirt in classic plaid. Size Large.</p>
+                <div class="product-price">$65</div>
+                <a href="#" class="ebay-link">View on eBay</a>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <div class="product-image">🧢</div>
+            <div class="product-info">
+                <h3>Vintage Trucker Cap</h3>
+                <p>Mesh back snapback with authentic patina.</p>
+                <div class="product-price">$35</div>
+                <a href="#" class="ebay-link">View on eBay</a>
+            </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+            <div class="product-image">👖</div>
+            <div class="product-info">
+                <h3>Wrangler Western Jeans</h3>
+                <p>Vintage cut with authentic wear. Size 34x34.</p>
+                <div class="product-price">$70</div>
+                <a href="#" class="ebay-link">View on eBay</a>
+            </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+            <div class="product-image">🥾</div>
+            <div class="product-info">
+                <h3>Red Wing Boots</h3>
+                <p>Classic work boots with tons of life left. Size 10.</p>
+                <div class="product-price">$150</div>
+                <a href="#" class="ebay-link">View on eBay</a>
+            </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+            <div class="product-image">🧥</div>
+            <div class="product-info">
+                <h3>Vintage Denim Jacket</h3>
+                <p>Lee Storm Rider jacket. Perfect fade. Size Medium.</p>
+                <div class="product-price">$95</div>
+                <a href="#" class="ebay-link">View on eBay</a>
+            </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card">
+            <div class="product-image">👔</div>
+            <div class="product-info">
+                <h3>Dickies Work Pants</h3>
+                <p>Classic workwear pants in tan. Size 33x30.</p>
+                <div class="product-price">$45</div>
+                <a href="#" class="ebay-link">View on eBay</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="footer-content">
+        <h3>Hollerin' Vintage</h3>
+        <p>Curating authentic Americana, one piece at a time.</p>
+        <p>Questions? Email us at: <strong>info@hollerinvintage.com</strong></p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">eBay Store</a>
+            <a href="#">Facebook</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">© 2025 Hollerin' Vintage. All rights reserved.</p>
+    </div>
+</footer>
+```
+
+</body>
+</html>
