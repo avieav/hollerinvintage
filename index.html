@@ -70,20 +70,23 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url('hvlogo.png');
-      background-repeat: no-repeat;       /* stops the wallpaper effect */
-      background-position: top center;    /* places it at the top middle */
-      background-size: 75;           /* fits the full logo nicely */
       height: 320px;                      /* adjust to your taste */
       display: flex;
-      align-items: flex-end;              /* text sits below the logo */
+      flex-direction: column;
+      align-items: center;              /* text sits below the logo */
       justify-content: center;
       text-align: center;
       color: #f7eaa7;
       position: relative;        
     }
 
+    .hero-logo {
+        max-width: 400px; 
+        width: 80%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+        
     .hero-content h1 {
         font-size: 4rem;
         font-weight: bold;
@@ -361,6 +364,9 @@
 ```
 <section class="hero" id="home">
     <div class="hero-content">
+      <img src="hvlogo.png"
+           alt="Hollerin Vintage Logo"
+           class="hero-logo">
         <p>Americana • Denim • Workwear</p>
     </div>
 </section>
