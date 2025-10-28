@@ -103,24 +103,14 @@ BACKGROUND IMAGE SETUP:
   position: relative;
 }
 
-/* .hero::before {
-content: ‘’;
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 100%);
-z-index: 1;
-} */
-
 .hero-logo {
-max-width: 420px;
-width: 80%;
+top: 46%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: min(520px, 80vw);
 height: auto;
-margin-bottom: 1.5rem;
-filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
-position: relative;
+filter: drop-shadow(2 2px 4px rgba(0,0,0,0.35));
+position: absolute;
 z-index: 2;
 }
 
