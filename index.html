@@ -89,48 +89,7 @@ BACKGROUND IMAGE SETUP:
 1. To change the image, replace “hero-landscape.jpg” in the .hero background-image property below
    */
 
-/* ===== HERO ===== */
-.hero{
-  background: url('hero-landscape.jpg') center / cover no-repeat !important;
-  height: 480px;                  /* more breathing room; change if you want */
-  margin-bottom: 80px;
-  position: relative;             /* needed for absolute children */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;        /* centers logo vertically fallback */
-  text-align: center;
-  color: #fff4e0;
-}
 
-/* Centered logo */
-.hero-logo{
-  position: absolute;
-  top: 50%;                       /* true center */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(560px, 80vw);        /* desktop cap + fluid on small screens */
-  height: auto;
-  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.35)); /* fixed syntax */
-  z-index: 2;
-}
-
-/* Tagline wrapper pinned near the bottom */
-.hero-content{
-  position: absolute;
-  bottom: 36px;                   /* move up/down to taste */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  text-align: center;
-}
-
-/* Optional hero heading (if you use it) */
-.hero-content h1{
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  font-style: italic;
   letter-spacing: 2px;
 }
 
@@ -149,23 +108,68 @@ BACKGROUND IMAGE SETUP:
   padding: 0;                     /* remove extra bump */
 }
 
+/* ===== FINAL HERO FIX (put at very end of CSS) ===== */
+
+.hero{
+  position: relative !important;
+  background: url('hero-landscape.jpg') center / cover no-repeat !important;
+  height: 500px !important;                 /* adjust 440–560 to taste */
+  margin-bottom: 80px !important;
+  display: block !important;
+  text-align: center !important;
+  overflow: hidden !important;               /* keeps content inside */
+}
+
+/* Center the logo */
+.hero-logo{
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: min(560px, 80vw) !important;
+  height: auto !important;
+  margin: 0 !important;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,.35)) !important;
+  z-index: 2 !important;
+  display: block !important;
+}
+
+/* Pin tagline near the bottom, keep it on one line */
+.hero-content{
+  position: absolute !important;
+  bottom: 36px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 2 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+.hero-content p{
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;            /* no wrapping */
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.15rem !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  color: #FFF4E0 !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45) !important;
+}
+
 /* Mobile tweaks */
 @media (max-width: 768px){
-  .hero{ height: 520px; }         /* extra space for logo + tagline */
-  .hero-logo{ width: min(640px, 88vw); }
-  .hero-content{ bottom: 26px; }
+  .hero{ height: 540px !important; }
+  .hero-logo{ width: min(640px, 88vw) !important; }
+  .hero-content{ bottom: 26px !important; }
   .hero-content p{
-    font-size: 1rem;
-    letter-spacing: 0.18em;
+    font-size: 1rem !important;
+    letter-spacing: 0.18em !important;
   }
 }
 
-/* (If you ever animate a gradient background) */
-@keyframes gradientFlow{
-  0%   { background-position: 0%   center; }
-  50%  { background-position: 100% center; }
-  100% { background-position: 0%   center; }
-}
 
 /* ABOUT SECTION */
 .about {
