@@ -89,72 +89,85 @@ BACKGROUND IMAGE SETUP:
 1. To change the image, replace “hero-landscape.jpg” in the .hero background-image property below
    */
 
-/* Hero Section */
-.hero {
+/* ===== HERO ===== */
+.hero{
   background: url('hero-landscape.jpg') center / cover no-repeat !important;
-  height: 420px;
+  height: 480px;                  /* more breathing room; change if you want */
   margin-bottom: 80px;
+  position: relative;             /* needed for absolute children */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center;        /* centers logo vertically fallback */
   text-align: center;
   color: #fff4e0;
-  position: relative;
 }
 
-.hero-logo {
-top: 46%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: min(520px, 80vw);
-height: auto;
-filter: drop-shadow(2 2px 4px rgba(0,0,0,0.35));
-position: absolute;
-z-index: 2;
-}
-
-.hero-content {
-position: relative;
-}
-
-  .hero-content {
+/* Centered logo */
+.hero-logo{
   position: absolute;
-  bottom: 40px; /* move higher or lower to taste */
+  top: 50%;                       /* true center */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(560px, 80vw);        /* desktop cap + fluid on small screens */
+  height: auto;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.35)); /* fixed syntax */
+  z-index: 2;
+}
+
+/* Tagline wrapper pinned near the bottom */
+.hero-content{
+  position: absolute;
+  bottom: 36px;                   /* move up/down to taste */
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
   z-index: 2;
-  color: #fff4e0; /* or whatever color you liked */
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-}
-.hero-content h1 {
-font-size: 4rem;
-font-weight: bold;
-margin-bottom: 1rem;
-font-style: italic;
-letter-spacing: 2px;
+  text-align: center;
 }
 
-.hero-content p {
-font-size: 1.3rem;
-letter-spacing: 6px;
-text-transform: uppercase;
-font-family: ‘Playfair Display’, serif;
-font-weight: 600;
-font-style: italic;
-color: #fff4e0;
-padding: 0.5rem;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+/* Optional hero heading (if you use it) */
+.hero-content h1{
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-style: italic;
+  letter-spacing: 2px;
 }
 
-@keyframes gradientFlow {
-0% { background-position: 0% center; }
-50% { background-position: 100% center; }
-100% { background-position: 0% center; }
+/* Tagline: one line, readable over photo */
+.hero-content p{
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.22em;         /* nicer than fixed 6px */
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif; /* straight quotes */
+  font-weight: 600;
+  font-style: normal;             /* not italic for clarity */
+  white-space: nowrap;            /* prevents stacking */
+  color: #FFF4E0;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  padding: 0;                     /* remove extra bump */
 }
 
-/* About Section */
+/* Mobile tweaks */
+@media (max-width: 768px){
+  .hero{ height: 520px; }         /* extra space for logo + tagline */
+  .hero-logo{ width: min(640px, 88vw); }
+  .hero-content{ bottom: 26px; }
+  .hero-content p{
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+  }
+}
+
+/* (If you ever animate a gradient background) */
+@keyframes gradientFlow{
+  0%   { background-position: 0%   center; }
+  50%  { background-position: 100% center; }
+  100% { background-position: 0%   center; }
+}
+
+/* ABOUT SECTION */
 .about {
 max-width: 1200px;
 margin: 4rem auto;
