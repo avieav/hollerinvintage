@@ -126,9 +126,18 @@ z-index: 2;
 
 .hero-content {
 position: relative;
-z-index: 2;
 }
 
+  .hero-content {
+  position: absolute;
+  bottom: 40px; /* move higher or lower to taste */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  color: #fff4e0; /* or whatever color you liked */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
 .hero-content h1 {
 font-size: 4rem;
 font-weight: bold;
